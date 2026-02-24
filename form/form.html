@@ -15,28 +15,38 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="/form/form.html">Inserir</a> 
+            <a href="/tabela/tabela.html">Listar</a> 
+            <a href="/js/">Alterar</a> 
+            <a href="/deletar/deletar.html">Excluir</a>
+        </nav>
+    </header>
     <div class="container">
-        <form class="form">
-            <div class="div-input">
+        <form class="form" id="myForm">
+            <div class="div-input" id="nome">
                 <label for="">Nome</label>
-                <input type="text" name="" id="" placeholder="Ex: Laura">
+                <input type="text" name="" id="nomeInput" placeholder="Ex: Laura">
             </div>
 
-            <div class="div-input">
+            <div class="div-input" id="salario">
                 <label for="">Salário</label>
-                <input type="text" name="" id="" placeholder="Ex: 1500">
+                <input type="text" name="" id="salarioInput" placeholder="Ex: 1500">
             </div>
 
-            <div class="div-input">
+            <div class="div-input" id="idade">
                 <label for="">Idade</label>
-                <input type="text" name="" id="" placeholder="Ex: 20">
+                <input type="text" name="" id="idadeInput" placeholder="Ex: 20">
             </div>
 
             <div>
-                <button>Adicionar</button>
+                <button type="submit">Adicionar</button>
             </div>
         </form>
     </div>
+
+    <script src="form.js"></script>
 </body>
 
 </html>
