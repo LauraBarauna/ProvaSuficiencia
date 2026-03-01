@@ -97,3 +97,59 @@ a:hover {
 a:active {
     transform: translateY(0);
 }
+
+.alerta-vazio {
+    margin-top: 20px;
+    padding: 20px 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f3f4ff, #ffffff);
+    border: 1px solid #dcdfff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.alerta-vazio strong {
+    color: #7657D2;
+    font-size: 16px;
+}
+
+.alerta-vazio span {
+    color: #555;
+    font-size: 14px;
+}
+
+#paginacao {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#paginacao button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #7657D2;
+    color: white;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #513b92;
+}
+
+.hidden {
+    display: none;
+}

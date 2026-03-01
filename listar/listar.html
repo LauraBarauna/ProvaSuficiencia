@@ -28,9 +28,11 @@
     <main>
         <section class="table-section">
 
-            <h1>Lista de Colaboradores</h1>
+            <div id="info">
+                <h1>Lista de Colaboradores</h1>
+            </div>
 
-            <table id="tabela">
+            <table id="tabela" class="hidden">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -42,6 +44,12 @@
                 <tbody id="body-tabela">
                 </tbody>
             </table>
+
+            <div id="paginacao" class="hidden">
+                <button id="anterior">Anterior</button>
+                <span id="infoPagina"></span>
+                <button id="proxima">Próxima</button>
+            </div>
         </section>
     </main>
 
