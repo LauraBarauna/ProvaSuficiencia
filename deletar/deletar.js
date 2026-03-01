@@ -2,7 +2,7 @@ const form = document.getElementById("myForm");
 const id = document.getElementById("idParaRemover");
 
 const modal = document.getElementById("modal");
-const textoModal= document.getElementById("frase-modal");
+const textoModal = document.getElementById("frase-modal");
 const fecharModal = document.getElementById("fecharModal");
 
 const abrirModal = (frase) => {
@@ -32,6 +32,9 @@ const removerColab = async () => {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
 
+        let cache = JSON.parse(localStorage.getItem("colabs")) || [];
+        cache = cache.filter(colab => colab.id !== id.value);
+        localStorage.setItem("colabs", JSON.stringify(cache));
         abrirModal(`Colab com id ${id.value} deletado com sucesso!`);
         console.log(`Colab com id ${id.value} deletado!`);
     } catch (error) {
@@ -54,7 +57,7 @@ form.addEventListener('submit', function (event) {
     if (!formValido()) {
         return;
     }
-    
+
     removerColab();
 })
 

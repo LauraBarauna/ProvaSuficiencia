@@ -70,6 +70,12 @@ button:hover {
     background-color: #513b92;
 }
 
+#deletar {
+    background: #513b92;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
 input:focus {
     outline: none;
     border-color: #7657D2;

@@ -134,6 +134,12 @@ a:active {
     cursor: not-allowed;
 }
 
+#listar {
+    background: #513b92;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
 
 button {
     padding: 10px 20px;

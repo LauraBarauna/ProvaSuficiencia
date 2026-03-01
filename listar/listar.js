@@ -42,44 +42,41 @@ const popularTabela = (colabs) => {
     conteudoTabela.innerHTML = htmlFinal;
 }
 
+const aplicarPaginacao = (dados) => {
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+
+    const dadosPagina = dados.slice(inicio, fim);
+
+    popularTabela(dadosPagina);
+    atualizarInfoPagina(dados.length);
+};
 
 const getColaboradores = async () => {
     try {
-        const res = await fetch(`https://69a37967611ecf5bfc22e438.mockapi.io/lauravbarauna/provasuficiencia/employees?page=${paginaAtual}&limit=${itensPorPagina}`);
+        let dados = JSON.parse(localStorage.getItem("colabs"));
 
-        if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
+        if (!dados) {
+            const res = await fetch(`https://69a37967611ecf5bfc22e438.mockapi.io/lauravbarauna/provasuficiencia/employees`);
+            dados = await res.json();
+
+            localStorage.setItem("colabs", JSON.stringify(dados));
         }
 
-        const data = await res.json();
-
-        console.log("Array atualizado:", data);
-        popularTabela(data);
-        atualizarInfoPagina(data.length);
-
+        aplicarPaginacao(dados);
     } catch (error) {
-        console.error("Fetch error:", error);
+        console.error(error);
     }
 };
 
-const atualizarInfoPagina = (quantidadeRetornada) => {
-    const info = document.getElementById("infoPagina");
-    info.textContent = `Página ${paginaAtual}`;
+const atualizarInfoPagina = (totalItens) => {
+    const totalPaginas = Math.ceil(totalItens / itensPorPagina);
 
-    console.log('qtd retornada ', quantidadeRetornada)
-    console.log('itens por pag ', itensPorPagina)
+    document.getElementById("infoPagina").textContent =
+        `Página ${paginaAtual} de ${totalPaginas}`;
 
-    if (paginaAtual < 2) {
-        document.getElementById("anterior").disabled = true;
-    } else {
-        document.getElementById("anterior").disabled = false;
-    }
-
-    if (quantidadeRetornada < itensPorPagina) {
-        document.getElementById("proxima").disabled = true;
-    } else {
-        document.getElementById("proxima").disabled = false;
-    }
+    document.getElementById("anterior").disabled = paginaAtual === 1;
+    document.getElementById("proxima").disabled = paginaAtual === totalPaginas;
 };
 
 document.getElementById("anterior").addEventListener("click", () => {
