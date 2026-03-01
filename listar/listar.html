@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="/adicionar/adicionar.html">Inserir</a></li>
+                <li><a href="/listar/listar.html">Listar</a></li>
+                <li><a href="/js/">Alterar</a></li>
+                <li><a href="/deletar/deletar.html">Excluir</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="table-section">
+
+            <h1>Lista de Colaboradores</h1>
+
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Salário</th>
+                        <th>Idade</th>
+                    </tr>
+                </thead>
+                <tbody id="body-tabela">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="listar.js"></script>
+</body>
+
+</html>
