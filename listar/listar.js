@@ -38,7 +38,6 @@ const popularTabela = (colabs) => {
     }
 
     tabela.classList.remove("hidden");
-    paginacao.classList.remove("hidden");
     conteudoTabela.innerHTML = htmlFinal;
 }
 

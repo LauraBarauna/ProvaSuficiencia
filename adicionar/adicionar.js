@@ -64,7 +64,7 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    adicionarColab(nome.value, salario.value, idade.value);
+    adicionarColab();
 })
 
 fecharModal.addEventListener("click", fechar);
